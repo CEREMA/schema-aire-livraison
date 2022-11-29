@@ -1,0 +1,402 @@
+{
+   "$schema":"https://specs.frictionlessdata.io/schemas/table-schema.json",
+   "name":"aire-livraison",
+   "title":"Aires de livraison",
+   "description":"Spécification du fichier d'échange relatif aux aires de livraison",
+   "keywords":[
+      "supply",
+      "mobility",
+      "city",
+      "smartcity",
+      "regulation",
+      "parking"
+   ],
+   "countryCode":"FR",
+   "homepage":"https://github.com/CEREMA/schema-aire-livraison",
+   "path":"https://github.com/CEREMA/schema-aire-livraison/raw/xxx/schema.json",
+   "image":"https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/xxx/files/image.png",
+   "licenses":[
+      {
+         "title":"Etalab Licence Ouverte 2.0",
+         "name":"etalab-2.0",
+         "path":"https://spdx.org/licenses/etalab-2.0.html"
+      }
+   ],
+   "resources":[
+      {
+         "title":"Fichier valide",
+         "name":"exemple-valide-csv",
+         "path":"https://raw.githubusercontent.com/CEREMA/xxx.csv"
+      }
+   ],
+   "sources":[
+      {
+         "title":"xxx",
+         "path":"xxx"
+      }
+   ],
+   "created":"2022-11-22",
+   "lastModified":"2022-11-22",
+   "version":"0.1.0",
+   "contributors":[
+      {
+         "title":"Mathieu Rajerison",
+         "email":"mathieu.rajerison@cerema.fr",
+         "organisation":"Cerema",
+         "role":"author"
+      },
+      {
+         "title":"Cédric Bariou",
+         "email":"cedric.bariou@cerema.fr",
+         "organisation":"Cerema",
+         "role":"contributor"
+      },
+      {
+         "title":"Jean-Marie Bourgogne",
+         "email":"jmbourgogne@opendatafrance.email",
+         "organisation":"OpenDataFrance",
+         "role":"contributor"
+      },
+      {
+         "title":"Silvio Rousic",
+         "email":"silvio.rousic@cerema.fr",
+         "organisation":"Cerema",
+         "role":"contributor"
+      }
+   ],
+   "fields":[
+      {
+         "name":"ID",
+         "title":"Identifiant de l'entité",
+         "description":"Il s'agit de l'identifiant, unique, de la ligne du tableau.. [Vous pouvez créer des identifiants grâce à l'application Heidi d'Etalab](https://heidi.app.etalab.studio/).",
+         "example":"133-3",
+         "type":"string",
+         "constraints":{
+            "required":true,
+            "unique":true
+         }
+      },
+      {
+         "name":"COLL_NOM",
+         "title":"Nom de la collectivité à l'origine de l'arrêté",
+         "description":"Nom de la collectivité.",
+         "example":"Commune d'Aix-en-Provence",
+         "type":"string",
+         "constraints":{
+            "required":true
+         }
+      },
+      {
+         "name":"COLL_INSEE",
+         "title":"Code INSEE",
+         "description":"Code INSEE de la commune sur laquelle s'applique l'arrêté",
+         "type":"string",
+         "example":"13090",
+         "constraints":{
+            "required":true,
+            "pattern":"^([013-9]\\d|2[AB1-9])\\d{3}$",
+            "minLength":5,
+            "maxLength":5
+         }
+      },
+      {
+         "name":"ARR_REF",
+         "title":"Référence de l'arrêté",
+         "description":"Référence ou numéro de l'arrêté auquel se réfère la règlementation. Si l'arrêté a été mis à jour, la référence doit être celle de l'arrêté mis à jour et non celle de l'arrêté originel. Si l'arrêté ne possède pas de référence, mettre la valeur `NC`",
+         "type":"string",
+         "example":"AP-13090-12",
+         "constraints":{
+            "required":true
+         }
+      },
+      {
+         "name":"ARR_DATE",
+         "title":"Date de l'arrêté",
+         "description":"Date de création ou de mise à jour de l'arrêté, au format ISO 8601 AAAA-MM-DD. Mettre `NC` si pas d'indication dans l'arrêté",
+         "example":"2021-04-30",
+         "type":"date",
+         "format":"%Y-%m-%d",
+         "constraints":{
+            "required":true
+         }
+      },
+      {
+         "name":"ARR_URL (proposition)",
+         "title":"Adresse internet de l'arrêté",
+         "description":"Adresse internet par laquelle accéder à l'arrêté, et donc au règlement.",
+         "type":"string",
+         "format":"uri",
+         "example":"https://carte.st-paul-les-dax.fr/wp-content/uploads/2020/06/AM-10248.pdf",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"SURFACE",
+         "title":"Surface",
+         "description":"xxx",
+         "type":"number",
+         "example":"9",
+         "constraints":{
+            "required":false,
+            "minimum":0,
+            "maximum":45
+         }
+      },
+      {
+         "name":"LONGUEUR",
+         "title":"Longueur",
+         "description":"Longueur en mètres",
+         "type":"number",
+         "example":"9",
+         "constraints":{
+            "required":false,
+            "minimum":0,
+            "maximum":45
+         }
+      },
+      {
+         "name":"LARGEUR",
+         "title":"Largeur",
+         "description":"Largeur en mètres",
+         "type":"number",
+         "example":"9",
+         "constraints":{
+            "required":false,
+            "minimum":0,
+            "maximum":45
+         }
+      },
+      {
+         "name":"HAUTEUR_SOL",
+         "title":"Largeur",
+         "description":"si hauteur de la marche",
+         "type":"number",
+         "example":"9",
+         "constraints":{
+            "required":false,
+            "minimum":0,
+            "maximum":45
+         }
+      },
+      {
+         "name":"HAUTEUR_PLAFOND",
+         "title":"xxx",
+         "description":"hauteur max. si contrainte d'accès (parking ouvrage, parking en surface avec portique, ..)",
+         "type":"number",
+         "example":"9",
+         "constraints":{
+            "required":false,
+            "minimum":0,
+            "maximum":45
+         }
+      },
+      {
+         "name":"NB_PLACES",
+         "title":"Nombre de places",
+         "description":"xxx",
+         "type":"number",
+         "example":"9",
+         "constraints":{
+            "required":true,
+            "minimum":0,
+            "maximum":45
+         }
+      },
+      {
+         "name":"ADRESSE",
+         "title":"Adresse",
+         "description":"Adresse de l'aire",
+         "example":"32 Avenue Philippe Solari",
+         "type":"string",
+         "constraints":{
+            "required":true,
+            "pattern":"^[a-zA-Z0-9\\-\\–\\'\\’\\«\\»\\°\\\"\\s\\d\\u00C0-\\u00FF\\(\\)\\,\\.]+$"
+         }
+      },
+      {
+         "name":"XY (mis en obligatoire)",
+         "title":"Localisation",
+         "description":"Localisation de l'aire de livraison. S'écrit sous la forme 'long,lat' (5 ou 6 décimales sont conseillées).",
+         "type":"geopoint",
+         "example":"5.42101,43.53591",
+         "constraints":{
+            "required":true
+         }
+      },
+      {
+         "name":"ZONE",
+         "title":"Zone",
+         "description":"Zone associée à l'aire. Il s'agit généralement de la dénomination du quartier ou de l'aire piétonne associée règlementée",
+         "example":"Secteur du Centre-Ville",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"ASP_ID",
+         "title":"Identifiant de la zone de contrôle ASP",
+         "description":"xxx",
+         "example":"133-3",
+         "type":"string",
+         "constraints":{
+            "required":false,
+            "unique":false
+         }
+      },
+      {
+         "name":"SIGNALISATION",
+         "title":"Signalisation",
+         "description":"Type de signalisation : Horizontale, Verticale, Conformité",
+         "type":"string",
+         "example":"Horizontale",
+         "constraints":{
+            "required":false,
+            "enum":[
+               "Horizontale",
+               "Verticale",
+               "Conformité"
+            ]
+         }
+      },
+      {
+         "name":"STATIONNEMENT",
+         "title":"Type de stationnement",
+         "description":"Type de stationnement",
+         "type":"string",
+         "example":"Bataille",
+         "constraints":{
+            "required":false,
+            "enum":[
+               "Bataille",
+               "Épi",
+               "Longitudinal (ou 'En longueur' plus parlant ?)"
+            ]
+         }
+      },
+      {
+         "name":"REGIME_ACCES",
+         "title":"Régime d'accès",
+         "description":"Régime d'accès au stationnement",
+         "type":"string",
+         "example":"Exclusif",
+         "constraints":{
+            "required":false,
+            "enum":[
+              "Mixte (avec stationnement particulier)",
+              "Exclusif",
+              "Alterné",
+              "Transport de fonds",
+              "Livraison"
+            ]
+         }
+      },
+      {
+         "name":"CATEGORIE",
+         "title":"Catégorie",
+         "description":"Catégorie",
+         "type":"string",
+         "example":"Livraison",
+         "constraints":{
+            "required":false,
+            "enum":[
+              "Transport de fonds",
+              "Livraison"
+            ]
+         }
+      },
+      {
+         "name":"TONNAGE",
+         "title":"Tonnage",
+         "description":"Tonnage du véhicule. Remplir le champ `VEH_TONNAGE_MODALITE` pour dire s'il s'agit du tonnage à partir duquel ou jusqu'auquel s'applique la règle.",
+         "type":"number",
+         "example":"9",
+         "constraints":{
+            "required":false,
+            "minimum":0,
+            "maximum":45
+         }
+      },
+      {
+         "name":"JH",
+         "title":"Jours et heures de circulation",
+         "description":"Jours et heures de circulation autorisés pour la circulation exprimés selon le format OpeningHours d'OpenStreetMap ([https://wiki.openstreetmap.org/wiki/Key:opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)). Ce format permet d'indiquer les week-ends (we), les jours fériés (PH) et les vacances scolaires (SH). Par exemple `Mo-Fr 09:00-17:00; PH 10:00-12:00; PH Su off` signifie : 'Du lundi au vendredi de 9h à 17h sauf les jours fériés où l'ouverture est de 10h à 12h, à l'exception des jours fériés tombant un dimanche'. `24/7` indique `Tous les jours`. [Utiliser groom-groom pour récupérer les jours et heures de circulation](https://cerema-med.shinyapps.io/groom-groom?action=opening_hours)",
+         "example":"Mo-Fr 08:00-12:00,13:00-17:30; Sa 08:00-12:00; PH off",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"REGLEMENT",
+         "title":"Réglementation",
+         "description":"Réglementation",
+         "example":"Charte de livraison",
+         "type":"string",
+         "constraints":{
+            "required":true
+         }
+      },
+      {
+         "name":"TARIF_MODE",
+         "title":"Mode de tarification",
+         "description":"Mode de tarification",
+         "type":"string",
+         "example":"Gratuit",
+         "constraints":{
+            "required":false,
+            "enum":[
+              "Gratuit",
+              "Stationnement limité",
+              "Stationnement payant"
+            ]
+         }
+      },
+      {
+         "name":"TARIF_PRIX",
+         "title":"Tarif horaire",
+         "description":"Tarif horaire",
+         "type":"number",
+         "example":"xxx",
+         "constraints":{
+            "required":false,
+            "minimum":0,
+            "maximum":45
+         }
+      },
+      {
+         "name":"EQUIPEMENTS",
+         "title":"Equipements",
+         "description":"Équipements particuliers de l'aire de livraison",
+         "type":"string",
+         "example":"Rampe d'accès",
+         "constraints":{
+            "required":false,
+            "enum":[
+              "Rampe d'accès",
+              "xxx"
+            ]
+         }
+      },
+      {
+         "name":"IRVE",
+         "title":"IRVE",
+         "description":"Présence d'une borne de recharge de véhicule électrique",
+         "example":"oui",
+         "trueValues":["oui", "Oui", "OUI", "o", "O", "vrai", "Vrai", "VRAI", "true", "True", "TRUE", "1"],
+         "falseValues":["non", "Non", "NON", "n", "N", "faux", "Faux", "FAUX", "false", "False", "FALSE", "0"],
+         "type":"boolean",
+         "constraints":{
+            "required":false
+         }
+      }
+   ],
+   "missingValues":[
+      "",
+      "NA",
+      "NaN",
+      "N/A"
+   ],
+   "primaryKey":"ID"
+}
