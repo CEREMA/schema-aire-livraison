@@ -3,7 +3,7 @@ Ceci est le répertoire du schéma sur les aires de livraison.
 
 Ce travail a été conduit en partenariat avec OpenDataFrance et La Région SUD et sera poursuivi en 2023 avec la DGITM.
 
-Une première écriture du schéma est proposée sachant qu'en 2023, les parties prenantes et acteurs de la logistique seront conviés à son élaboration.
+Une première écriture du schéma est proposée sachant qu'en 2023, les parties prenantes et acteurs de la logistique seront conviés à son élaboration de manière plus approfondie.
 
 [Voir la documentation associée au schéma (liste des champs et valeurs possibles)](documentation/schema-page.md)   
 [Voir le schéma au format TableSchema ](schema.json) 
