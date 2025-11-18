@@ -68,10 +68,9 @@ Autrement, on trouve sur internet plusieurs jeux de données ouverts sur les air
 
 Ils sont dans le dossier `scripts`:
 
-[Créer la documentation du schéma](https://github.com/CEREMA/schema-aire-livraison/blob/main/scripts/1-Creer-Documentation.bat)  
-[Tester l'exemple avec frictionless](https://github.com/CEREMA/schema-aire-livraison/blob/main/scripts/2-Tester-Exemple.bat)
+[Créer la documentation du schéma](https://github.com/CEREMA/schema-aire-livraison/blob/main/scripts/01-Creer-Documentation.bat)  
+[Tester l'exemple avec frictionless](https://github.com/CEREMA/schema-aire-livraison/blob/main/scripts/02-Tester-Exemple.bat)
 
 ### Autres
 
 [Reformater le schéma JSON TableSchema](https://jsonformatter.curiousconcept.com/#)
-

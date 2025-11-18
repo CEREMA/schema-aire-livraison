@@ -1,0 +1,92 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Dans ce notebook, nous contrôlons les colonnes d'un fichier pour voir si elles correspondent à celles du schéma
+
+```{r}
+library(jsonlite)
+library(tidyverse)
+library(openxlsx)
+
+schema <- read_json("../../schema.json")
+```
+
+```{r}
+cmd <- '"C:/Program Files/LibreOffice/program/soffice.exe" --headless --convert-to csv ../../data/Antibes/antibes_aires_livraison.xls --outdir ../../data/Antibes'
+system(cmd)
+f <- read.csv("../../data/Antibes/antibes_aires_livraison.csv", fileEncoding = "ISO-8859-1")
+f$ARR_CONSIDERANT %>% head # Pas de soucis d'accents
+```
+
+```{r}
+names(f)
+```
+
+```{r}
+field_names <- sapply(schema$fields, function(field) field$name)
+```
+
+Champ absent du schéma
+```{r}
+setdiff(names(f), field_names)
+```
+
+Champ du schéma absent du jeu de données
+```{r}
+setdiff(field_names, names(f))
+```
+
+<on modifie le fichier xls>
+
+On relit le fichier
+```{r}
+cmd <- '"C:/Program Files/LibreOffice/program/soffice.exe" --headless --convert-to csv ../../data/Antibes/antibes_aires_livraison.xls --outdir ../../data/Antibes'
+system(cmd)
+```
+
+
+```{r}
+f <- read.csv("../../data/Antibes/antibes_aires_livraison.csv", fileEncoding = "ISO-8859-1")
+```
+
+# Matching
+Ordre des colonnes
+```{r}
+match(names(f), field_names)
+match(field_names, names(f))
+field_names[17]
+```
+
+Les colonnes sont dans le bon ordre
+
+On contrôle le fichier avec Frictionless
+
+# Export en CSV
+```{r}
+cmd <- '"C:/Program Files/LibreOffice/program/soffice.exe" --headless --convert-to csv ../../data/Antibes/antibes_aires_livraison.xls --outdir ../../data/Antibes'
+system(cmd)
+f <- read.csv("../../data/Antibes/antibes_aires_livraison.csv", fileEncoding = "ISO-8859-1")
+write.table(f, "../../data/Antibes/antibes_aires_livraison.csv", sep = ",", quote = TRUE, fileEncoding = "UTF-8", row.names = FALSE)
+```
+
+# Reformatage d'emprise désignation
+```{r}
+f <- read.csv("../../data/Antibes/antibes_aires_livraison--mr.csv", fileEncoding = "UTF-8")
+```
+
+```{r}
+rues <- f$EMPRISE_DESIGNATION
+```
+
+
+
+
+
+
+
+
+
+
+
