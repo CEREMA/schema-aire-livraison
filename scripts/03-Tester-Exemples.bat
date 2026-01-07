@@ -2,7 +2,7 @@
 
 call setenv.bat
 
-echo TEST 2 (EXEMPLE)
-%frictionless%  validate --schema ../schema.json ../exemple-grand-lyon.csv
+echo Test de l'exemple...
+%frictionless%  validate --schema ../schema.json ../exemple-grand-lyon.csv > log.txt
 
 pause

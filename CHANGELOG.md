@@ -1,3 +1,45 @@
+# 1.0 (refonte importance du schéma)
+
+## Lien du tableau de champs
+
+https://docs.google.com/spreadsheets/d/1hKA23tEkem2n8QiQwJQuWD1doH5zGnXALlUeKmyAVPQ/edit?gid=0#gid=0
+
+- Transmis par Evan BOULOGNE (UrbanRadar)
+- Equipe Cerema :
+  - Timothée FRITSCH HUMBLET
+  - Helene DE SOLERE
+
+## quelques modifications
+
+Validées par Hélène DE SOLERE et UrbanRadar
+
+- **Suppression de champs** :
+  - INTERV_REGIME : supprimé
+  - VEH_TONNAGE : supprimé
+  - EMPRISE_DEBATTEMENT : supprimé
+  - IRVE_PUISSANCE : conservé
+- **Champs liés à la réglementation** :
+  - COLL_INSEE : supprimé
+  - COLL_NOM : supprimé
+  - ARR_DATE : supprimé
+  - ARR_REF : supprimé
+  - ARR_OBJET : supprimé
+  - ARR_PRESENT : ajouté
+- **Renommages de champs** :
+  - STATUT => ACTIVE : validé
+  - CONTROLE => DUREE_CONTROLE : validé
+  - PANNEAU => PANNEAU_PRESENT : validé
+- **N/A** : 
+  - PANNEAU_ETAT : à conserver dans la liste enum
+  - PARITE_TROTTOIR : remplacé par "inconnu" dans la liste enum
+  - DISPOSITION : supprimé de la liste enum
+
+J'ai mis les tableurs [exemple](https://docs.google.com/spreadsheets/d/1eQugpG3CE9LYPUUBsO_fQzrHAORn9VCWknzXMIQNONk/edit?gid=2029306892#gid=2029306892) et [champs](https://docs.google.com/spreadsheets/d/1hKA23tEkem2n8QiQwJQuWD1doH5zGnXALlUeKmyAVPQ/edit?gid=0#gid=0) à jour en conséquent.
+
+## Clé primaire
+
+Changée pour **UUID**
+
 # 0.2
 
 ## EMPRISE_NBPLACES

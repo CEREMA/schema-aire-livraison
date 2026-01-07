@@ -1,0 +1,62 @@
+------------------------------------------------------- Dataset -------------------------------------------------------
+                              dataset                               
++------------------------------------------------------------------+
+| name               | type  | path                      | status  |
+|--------------------+-------+---------------------------+---------|
+| exemple-grand-lyon | table | ../exemple-grand-lyon.csv | INVALID |
++------------------------------------------------------------------+
+------------------------------------------------------- Tables --------------------------------------------------------
+                                                  exemple-grand-lyon                                                   
++---------------------------------------------------------------------------------------------------------------------+
+| Row | Field | Type             | Message                                                                            |
+|-----+-------+------------------+------------------------------------------------------------------------------------|
+| 2   | 14    | constraint-error | The cell "parallèle" in row at position "2" and field "DISPOSITION" at position    |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
+| 3   | 14    | constraint-error | The cell "parallèle" in row at position "3" and field "DISPOSITION" at position    |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
+| 4   | 14    | constraint-error | The cell "parallèle" in row at position "4" and field "DISPOSITION" at position    |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
+| 5   | 14    | constraint-error | The cell "parallèle" in row at position "5" and field "DISPOSITION" at position    |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
+| 6   | 14    | constraint-error | The cell "parallèle" in row at position "6" and field "DISPOSITION" at position    |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
+| 7   | 14    | constraint-error | The cell "parallèle" in row at position "7" and field "DISPOSITION" at position    |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
+| 8   | 14    | constraint-error | The cell "parallèle" in row at position "8" and field "DISPOSITION" at position    |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
+| 8   | 23    | constraint-error | The cell "n/a" in row at position "8" and field "PANNEAU_ETAT" at position "23"    |
+|     |       |                  | does not conform to a constraint: constraint "enum" is "['bon état', 'dégradé',    |
+|     |       |                  | 'N/A']"                                                                            |
+| 9   | 14    | constraint-error | The cell "parallèle" in row at position "9" and field "DISPOSITION" at position    |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
+| 10  | 14    | constraint-error | The cell "parallèle" in row at position "10" and field "DISPOSITION" at position   |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
+| 11  | 14    | constraint-error | The cell "parallèle" in row at position "11" and field "DISPOSITION" at position   |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
+| 11  | 28    | constraint-error | The cell "candélabre, borne recharge" in row at position "11" and field            |
+|     |       |                  | "EQUIPEMENT" at position "28" does not conform to a constraint: constraint "enum"  |
+|     |       |                  | is "['candélabre', 'capteur sol', 'capteur caméra', 'borne recharge', 'borne       |
+|     |       |                  | escamotable', "pas d'équipement"]"                                                 |
+| 12  | 14    | constraint-error | The cell "parallèle" in row at position "12" and field "DISPOSITION" at position   |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
+| 13  | 14    | constraint-error | The cell "parallèle" in row at position "13" and field "DISPOSITION" at position   |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
+| 14  | 14    | constraint-error | The cell "parallèle" in row at position "14" and field "DISPOSITION" at position   |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
+| 16  | 14    | constraint-error | The cell "parallèle" in row at position "16" and field "DISPOSITION" at position   |
+|     |       |                  | "14" does not conform to a constraint: constraint "enum" is "['bataille', 'épi',   |
+|     |       |                  | 'longitudinal']"                                                                   |
++---------------------------------------------------------------------------------------------------------------------+
