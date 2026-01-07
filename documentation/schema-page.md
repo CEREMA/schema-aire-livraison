@@ -7,7 +7,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Schéma créé le : 01/04/24
 - Site web : https://github.com/CEREMA/schema-aire-livraison
 - Version : v0.2.0
-- Valeurs manquantes : `""`, `"NA"`, `"NaN"`, `"N/A"`
+- Valeurs manquantes : `""`, `"NA"`, `"NaN"`, `"N/A"`, `"n/a"`
 - Clé primaire : `UUID`
 
 ### Modèle de données
@@ -44,7 +44,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 | [DUREE_CONTROLE](#contrôle-de-la-durée---propriété-duree_controle) | chaîne de caractères  | Non |
 | [TEMPORALITE_CDS](#plages-horaires-livraison-(norme-cds)---propriété-temporalite_cds) | chaîne de caractères  | Non |
 | [TEMPORALITE_OSM](#plages-horaires-livraison-(norme-osm)---propriété-temporalite_osm) | chaîne de caractères  | Non |
-| [EQUIPEMENT](#equipement---propriété-equipement) | chaîne de caractères  | Non |
+| [EQUIPEMENT](#equipement---propriété-equipement) | liste  | Non |
 | [IRVE_PUISSANCE](#puissance-de-l'installation-de-recharge-de-véhicule-électrique---propriété-irve_puissance) | nombre réel  | Non |
 | [ABAISSEMENT_TROTTOIR](#trottoir-abaissé-au-cul-du-vehicule---propriété-abaissement_trottoir) | booléen  | Non |
 | [COMMENTAIRE](#commentaire-libre---propriété-commentaire) | chaîne de caractères  | Non |
@@ -140,7 +140,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Valeurs autorisées : 
     - bataille
     - épi
-    - longitudinal
+    - parallèle
 
 #### Côté de la rue - Propriété `PARITE_TROTTOIR`
 
@@ -218,7 +218,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Valeurs autorisées : 
     - bon état
     - dégradé
-    - N/A
+    - n/a
 
 #### Durée maximale d'arrêt - Propriété `DUREE_MAX`
 
@@ -251,9 +251,9 @@ Spécification du fichier d'échange relatif aux aires de livraison
 
 #### Equipement - Propriété `EQUIPEMENT`
 
-> *Description : Equipement installé à proximité de l'aire de livraison. Si un équipement ne figure pas dans les valeurs autorisées, le renseigner dans COMMENTAIRE<br/>Ex : Candélabre*
+> *Description : Equipement installé à proximité de l'aire de livraison. Si un équipement ne figure pas dans les valeurs autorisées, le renseigner dans COMMENTAIRE<br/>Ex : ["candélabre", "borne recharge"]*
 - Valeur optionnelle
-- Type : chaîne de caractères
+- Type : liste
 - Valeurs autorisées : 
     - candélabre
     - capteur sol

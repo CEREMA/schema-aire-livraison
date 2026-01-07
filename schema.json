@@ -497,7 +497,7 @@
                 "enum": [
                     "bon état",
                     "dégradé",
-                    "N/A"
+                    "n/a"
                 ]
             }
         },
@@ -550,19 +550,12 @@
         {
             "name": "EQUIPEMENT",
             "title": "Equipement",
-            "description": "Equipement installé à proximité de l'aire de livraison. Si un équipement ne figure pas dans les valeurs autorisées, le renseigner dans COMMENTAIRE",
+            "description": "Equipement installé à proximité de l'aire de livraison. Si un équipement ne figure pas dans les valeurs autorisées, le renseigner dans COMMENTAIRE. Si plusieurs équipements, séparer les valeurs par une virgule",
             "type": "string",
-            "example": "Candélabre",
+            "example": "candélabre,borne recharge",  
             "constraints": {
                 "required": false,
-                "enum": [
-                    "candélabre",
-                    "capteur sol",
-                    "capteur caméra",
-                    "borne recharge",
-                    "borne escamotable",
-                    "pas d'équipement"
-                ]
+                "pattern":"^(?:(?:candélabre|capteur sol|capteur caméra|borne recharge|borne escamotable|pas d'équipement)(?:,\\s*)?)+$"
             }
         },
         {
@@ -634,7 +627,8 @@
         "",
         "NA",
         "NaN",
-        "N/A"
+        "N/A",
+        "n/a"
     ],
     "primaryKey": "UUID"
 }
