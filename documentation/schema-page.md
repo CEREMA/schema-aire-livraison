@@ -6,7 +6,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 
 - Schéma créé le : 01/04/24
 - Site web : https://github.com/CEREMA/schema-aire-livraison
-- Version : v0.2.0
+- Version : v1.0.0
 - Valeurs manquantes : `""`, `"NA"`, `"NaN"`, `"N/A"`, `"n/a"`
 - Clé primaire : `UUID`
 
@@ -21,7 +21,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 | [ARR_URL](#adresse-internet-de-l'arrêté---propriété-arr_url) | chaîne de caractères (format `uri`) | Non |
 | [ACTIVE](#statut-de-l'aire-de-livraison.-active-ou-pas---propriété-active) | booléen  | Non |
 | [UUID](#identifiant-uuid-de-l'entité---propriété-uuid) | chaîne de caractères (format `uuid`) | Non |
-| [ID](#identifiant-local-de-l'aire-de-livraison---propriété-id) | chaîne de caractères  | Oui |
+| [ID](#identifiant-de-l'aire-de-livraison-utilisé-dans-des-bases-de-données-locales---propriété-id) | chaîne de caractères  | Oui |
 | [NOM](#nom-de-l'aire-de-livraison---propriété-nom) | chaîne de caractères  | Non |
 | [DATE_MAJ](#date-de-mise-à-jour---propriété-date_maj) | date et heure  | Non |
 | [LATITUDE](#latitude---propriété-latitude) | nombre réel  | Oui |
@@ -44,7 +44,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 | [DUREE_CONTROLE](#contrôle-de-la-durée---propriété-duree_controle) | chaîne de caractères  | Non |
 | [TEMPORALITE_CDS](#plages-horaires-livraison-(norme-cds)---propriété-temporalite_cds) | chaîne de caractères  | Non |
 | [TEMPORALITE_OSM](#plages-horaires-livraison-(norme-osm)---propriété-temporalite_osm) | chaîne de caractères  | Non |
-| [EQUIPEMENT](#equipement---propriété-equipement) | liste  | Non |
+| [EQUIPEMENTS](#equipements---propriété-equipements) | chaîne de caractères  | Non |
 | [IRVE_PUISSANCE](#puissance-de-l'installation-de-recharge-de-véhicule-électrique---propriété-irve_puissance) | nombre réel  | Non |
 | [ABAISSEMENT_TROTTOIR](#trottoir-abaissé-au-cul-du-vehicule---propriété-abaissement_trottoir) | booléen  | Non |
 | [COMMENTAIRE](#commentaire-libre---propriété-commentaire) | chaîne de caractères  | Non |
@@ -73,7 +73,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Valeur optionnelle
 - Type : chaîne de caractères (format `uuid`)
 
-#### Identifiant local de l'aire de livraison - Propriété `ID`
+#### Identifiant de l'aire de livraison utilisé dans des bases de données locales - Propriété `ID`
 
 > *Description : Identifiant utilisé dans des bases de données locales associé à l'aire de livraison<br/>Ex : 133-3*
 - Valeur obligatoire
@@ -81,7 +81,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 
 #### Nom de l'aire de livraison - Propriété `NOM`
 
-> *Description : Nom lisible permettant d'identifier facilement l'aire de livraison. Constitué du nom de la collectivité associé à un numéro compris entre 1 et 9999 (ex : cu_dunkerque_0001)<br/>Ex : ca_annemasse_0001*
+> *Description : Nom lisible permettant d'identifier facilement l'aire de livraison. Constitué du nom de la collectivité associé à un numéro compris entre 1 et 9999 : 'nom_collectivité_#' (ex : cu_dunkerque_1)<br/>Ex : ca_annemasse_1*
 - Valeur optionnelle
 - Type : chaîne de caractères
 
@@ -93,34 +93,34 @@ Spécification du fichier d'échange relatif aux aires de livraison
 
 #### Latitude - Propriété `LATITUDE`
 
-> *Description : Coordonnee latitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))<br/>Ex : 46.19125*
+> *Description : Coordonnee latitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))<br/>Ex : 45.769656*
 - Valeur obligatoire
 - Type : nombre réel
 - Valeur entre -90 et 90
 
 #### Longitude - Propriété `LONGITUDE`
 
-> *Description : Coordonnee longitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))<br/>Ex : 6.21497*
+> *Description : Coordonnee longitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))<br/>Ex : 4.855184*
 - Valeur obligatoire
 - Type : nombre réel
 - Valeur entre -180 et 180
 
 #### Géométrie au format WKT - Propriété `GEOM_WKT`
 
-> *Description : Géométrie de la rue (ligne), ou de l'emprise (polygone) exprimée au format [WKT](https://fr.wikipedia.org/wiki/Well-known_text) (Well Know Text) sous le système de projection WGS84 (EPSG:4326)<br/>Ex : LineString(5.39340184 45.56538751, 5.41017215 45.56722934, 5.42510063 45.5679079)*
+> *Description : Géométrie de l'emprise de l'aire de livraison (polygone) exprimée au format [WKT (Well Know Text)](https://fr.wikipedia.org/wiki/Well-known_text) sous le système de projection WGS84 (EPSG:4326) avec des coordonées d'une précision de 6 décimales. Constitué de 5 points, le premier et le dernier étant identiques pour fermer le polygone<br/>Ex : POLYGON(4.855154 45.769666, 4.855176 45.769668, 4.855190 45.769583, 4.855168 45.769581, 4.855154 45.769666)*
 - Valeur optionnelle
 - Type : chaîne de caractères
 
 #### Adresse complète - Propriété `ADRESSE`
 
-> *Description : Adresse du point de référence de l'aire comprenant numéro, rue, code postal et ville<br/>Ex : 94 Rue de Geneve, 74240 Gaillard*
+> *Description : Adresse du point de référence de l'aire comprenant numéro, rue, code postal et ville<br/>Ex : 27 Rue Ney, 69006 Lyon*
 - Valeur optionnelle
 - Type : chaîne de caractères
 - Motif : `^[a-zA-Z0-9\-\–\'\’\«\»\°\"\s\dÀ-ÿ\(\)\,\.]+$`
 
 #### Code postal - Propriété `CODE_POSTAL`
 
-> *Description : Code postal associé à l'aire de livraison<br/>Ex : 74240*
+> *Description : Code postal associé à l'aire de livraison<br/>Ex : 69006*
 - Valeur optionnelle
 - Type : chaîne de caractères
 - Entre 5 et 5 caractères
@@ -128,13 +128,13 @@ Spécification du fichier d'échange relatif aux aires de livraison
 
 #### Commune - Propriété `COMMUNE`
 
-> *Description : Nom de la commune associé à l'aire de livraison<br/>Ex : Gaillard*
+> *Description : Nom de la commune associée à l'aire de livraison<br/>Ex : Lyon*
 - Valeur optionnelle
 - Type : chaîne de caractères
 
 #### Type de stationnement - Propriété `DISPOSITION`
 
-> *Description : L'angle de stationnement des vehicules sur l'aire de livraison<br/>Ex : Bataille*
+> *Description : L'angle de stationnement des véhicules sur l'aire de livraison<br/>Ex : Bataille*
 - Valeur optionnelle
 - Type : chaîne de caractères
 - Valeurs autorisées : 
@@ -169,7 +169,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 > *Description : Longueur de l'emprise de l'aire de livraison en centimètres<br/>Ex : 500*
 - Valeur optionnelle
 - Type : nombre réel
-- Valeur entre 100 et 6000
+- Valeur entre 100 et 10000
 
 #### Largeur - Propriété `LARGEUR`
 
@@ -202,7 +202,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Valeurs autorisées : 
     - aire périodique
     - aire permanente
-    - zone de marchandises
+    - zone marchandises
 
 #### Présence d'un panneau - Propriété `PANNEAU_PRESENT`
 
@@ -249,25 +249,19 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Valeur optionnelle
 - Type : chaîne de caractères
 
-#### Equipement - Propriété `EQUIPEMENT`
+#### Equipements - Propriété `EQUIPEMENTS`
 
-> *Description : Equipement installé à proximité de l'aire de livraison. Si un équipement ne figure pas dans les valeurs autorisées, le renseigner dans COMMENTAIRE<br/>Ex : ["candélabre", "borne recharge"]*
+> *Description : Equipements installés à proximité de l'aire de livraison. Les valeurs autorisées sont : candélabre, capteur sol, capteur caméra, borne recharge, borne escamotable, pas d'équipement. Si un équipement ne figure pas dans les valeurs autorisées, le renseigner dans COMMENTAIRE. Si plusieurs équipements, séparer les valeurs par une virgule<br/>Ex : candélabre,borne recharge*
 - Valeur optionnelle
-- Type : liste
-- Valeurs autorisées : 
-    - candélabre
-    - capteur sol
-    - capteur caméra
-    - borne recharge
-    - borne escamotable
-    - pas d'équipement
+- Type : chaîne de caractères
+- Motif : `^(?:(?:candélabre|capteur sol|capteur caméra|borne recharge|borne escamotable|pas d'équipement)(?:,\s*)?)+$`
 
 #### Puissance de l'installation de recharge de véhicule électrique - Propriété `IRVE_PUISSANCE`
 
 > *Description : Puissance de l'installation de recharge de véhicule électrique en kW<br/>Ex : 22*
 - Valeur optionnelle
 - Type : nombre réel
-- Valeur entre 1 et 150
+- Valeur entre 1 et 4500
 
 #### Trottoir abaissé au cul du vehicule - Propriété `ABAISSEMENT_TROTTOIR`
 

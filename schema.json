@@ -14,7 +14,7 @@
     "countryCode": "FR",
     "homepage": "https://github.com/CEREMA/schema-aire-livraison",
     "path": "https://github.com/CEREMA/schema-aire-livraison/raw/v0.2.0/schema.json",
-    "image": "https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/v0.2.0/files/image.jpg",
+    "image": "xxx",
     "licenses": [
         {
             "title": "Etalab Licence Ouverte 2.0",
@@ -24,12 +24,16 @@
     ],
     "resources": [
         {
-            "title": "Exemple valide pour Antibes",
-            "name": "exemple-antibes-csv",
-            "path": "https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/v0.2.0/exemple-antibes.csv"
+            "title": "Exemple valide pour le Grand Lyon",
+            "name": "exemple-grand-lyon.csv",
+            "path": "xxx"
         }
     ],
     "sources": [
+        {
+            "title": "Données Ouvertes Aires de Livraison pour la commune d'Antibes",
+            "path": "https://www.data.gouv.fr/datasets/aires-de-livraison-a-antibes-juan-les-pins"
+        },
         {
             "title": "Arrêté CA/MFV/2016/328 d'Antibes de 2016",
             "name": "arrete-CA/MFV/2016/328",
@@ -62,8 +66,8 @@
         }
     ],
     "created": "2024-01-04",
-    "lastModified": "2025-12-08",
-    "version": "v0.2.0",
+    "lastModified": "2026-01-08",
+    "version": "v1.0.0",
     "contributors": [
         {
             "title": "Mathieu Rajerison",
@@ -218,7 +222,7 @@
         },
         {
             "name": "ID",
-            "title": "Identifiant local de l'aire de livraison",
+            "title": "Identifiant de l'aire de livraison utilisé dans des bases de données locales",
             "description": "Identifiant utilisé dans des bases de données locales associé à l'aire de livraison",
             "example": "133-3",
             "type": "string",
@@ -230,9 +234,9 @@
         {
             "name": "NOM",
             "title": "Nom de l'aire de livraison",
-            "description": "Nom lisible permettant d'identifier facilement l'aire de livraison. Constitué du nom de la collectivité associé à un numéro compris entre 1 et 9999 (ex : cu_dunkerque_0001)",
+            "description": "Nom lisible permettant d'identifier facilement l'aire de livraison. Constitué du nom de la collectivité associé à un numéro compris entre 1 et 9999 : 'nom_collectivité_#' (ex : cu_dunkerque_1)",
             "type": "string",
-            "example": "ca_annemasse_0001",
+            "example": "ca_annemasse_1",
             "constraints": {
                 "required": false
             }
@@ -252,7 +256,9 @@
             "title": "Latitude",
             "description": "Coordonnee latitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))",
             "type": "number",
-            "example": "46.19125",
+            "floatNumber":true,
+            "decimalChar":".",
+            "example": "45.769656",
             "constraints": {
                 "required": true,
                 "minimum": -90,
@@ -264,7 +270,9 @@
             "title": "Longitude",
             "description": "Coordonnee longitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))",
             "type": "number",
-            "example": "6.21497",
+            "floatNumber":true,
+            "decimalChar":".",
+            "example": "4.855184",
             "constraints": {
                 "required": true,
                 "minimum": -180,
@@ -274,9 +282,9 @@
         {
             "name": "GEOM_WKT",
             "title": "Géométrie au format WKT",
-            "description": "Géométrie de la rue (ligne), ou de l'emprise (polygone) exprimée au format [WKT](https://fr.wikipedia.org/wiki/Well-known_text) (Well Know Text) sous le système de projection WGS84 (EPSG:4326)",
+            "description": "Géométrie de l'emprise de l'aire de livraison (polygone) exprimée au format [WKT (Well Know Text)](https://fr.wikipedia.org/wiki/Well-known_text) sous le système de projection WGS84 (EPSG:4326) avec des coordonées d'une précision de 6 décimales. Constitué de 5 points, le premier et le dernier étant identiques pour fermer le polygone",
             "type": "string",
-            "example": "LineString(5.39340184 45.56538751, 5.41017215 45.56722934, 5.42510063 45.5679079)",
+            "example": "POLYGON(4.855154 45.769666, 4.855176 45.769668, 4.855190 45.769583, 4.855168 45.769581, 4.855154 45.769666)",
             "constraints": {
                 "required": false
             }
@@ -285,7 +293,7 @@
             "name": "ADRESSE",
             "title": "Adresse complète",
             "description": "Adresse du point de référence de l'aire comprenant numéro, rue, code postal et ville",
-            "example": "94 Rue de Geneve, 74240 Gaillard",
+            "example": "27 Rue Ney, 69006 Lyon",
             "type": "string",
             "constraints": {
                 "required": false,
@@ -296,7 +304,7 @@
             "name": "CODE_POSTAL",
             "title": "Code postal",
             "description": "Code postal associé à l'aire de livraison",
-            "example": "74240",
+            "example": "69006",
             "type": "string",
             "constraints": {
                 "required": false,
@@ -308,8 +316,8 @@
         {
             "name": "COMMUNE",
             "title": "Commune",
-            "description": "Nom de la commune associé à l'aire de livraison",
-            "example": "Gaillard",
+            "description": "Nom de la commune associée à l'aire de livraison",
+            "example": "Lyon",
             "type": "string",
             "constraints": {
                 "required": false
@@ -318,7 +326,7 @@
         {
             "name": "DISPOSITION",
             "title": "Type de stationnement",
-            "description": "L'angle de stationnement des vehicules sur l'aire de livraison",
+            "description": "L'angle de stationnement des véhicules sur l'aire de livraison",
             "type": "string",
             "example": "Bataille",
             "constraints": {
@@ -371,7 +379,7 @@
             "constraints": {
                 "required": false,
                 "minimum": 100,
-                "maximum": 6000
+                "maximum": 10000
             }
         },
         {
@@ -447,7 +455,7 @@
                 "enum": [
                     "aire périodique",
                     "aire permanente",
-                    "zone de marchandises"
+                    "zone marchandises"
                 ]
             }
         },
@@ -548,9 +556,9 @@
             }
         },
         {
-            "name": "EQUIPEMENT",
-            "title": "Equipement",
-            "description": "Equipement installé à proximité de l'aire de livraison. Si un équipement ne figure pas dans les valeurs autorisées, le renseigner dans COMMENTAIRE. Si plusieurs équipements, séparer les valeurs par une virgule",
+            "name": "EQUIPEMENTS",
+            "title": "Equipements",
+            "description": "Equipements installés à proximité de l'aire de livraison. Les valeurs autorisées sont : candélabre, capteur sol, capteur caméra, borne recharge, borne escamotable, pas d'équipement. Si un équipement ne figure pas dans les valeurs autorisées, le renseigner dans COMMENTAIRE. Si plusieurs équipements, séparer les valeurs par une virgule",
             "type": "string",
             "example": "candélabre,borne recharge",  
             "constraints": {
@@ -571,7 +579,7 @@
             "constraints": {
                 "required": false,
                 "minimum": 1,
-                "maximum": 150
+                "maximum": 4500
             }
         },
         {
