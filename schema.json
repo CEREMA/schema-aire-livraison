@@ -114,6 +114,11 @@
             "role": "contributor"
         },
         {
+            "title": "Philippe Rapin",
+            "organisation": "Urban Radar",
+            "role": "contributor"
+        },
+        {
             "title": "Hélène De Solère",
             "organisation": "Cerema",
             "role": "contributor"
@@ -251,24 +256,10 @@
                 "required": false
             }
         },
-        {
-            "name": "LATITUDE",
-            "title": "Latitude",
-            "description": "Coordonnee latitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))",
-            "type": "number",
-            "floatNumber":true,
-            "decimalChar":".",
-            "example": "45.769656",
-            "constraints": {
-                "required": true,
-                "minimum": -90,
-                "maximum": 90
-            }
-        },
-        {
+                {                                   
             "name": "LONGITUDE",
             "title": "Longitude",
-            "description": "Coordonnee longitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))",
+            "description": "Coordonnée longitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))",
             "type": "number",
             "floatNumber":true,
             "decimalChar":".",
@@ -277,6 +268,20 @@
                 "required": true,
                 "minimum": -180,
                 "maximum": 180
+            }
+        },
+        {
+            "name": "LATITUDE",
+            "title": "Latitude",
+            "description": "Coordonnée latitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))",
+            "type": "number",
+            "floatNumber":true,
+            "decimalChar":".",
+            "example": "45.769656",
+            "constraints": {
+                "required": true,
+                "minimum": -90,
+                "maximum": 90
             }
         },
         {
@@ -412,7 +417,7 @@
         {
             "name": "MARQUAGE_CONFORMITE",
             "title": "Conformité du marquage",
-            "description": "Conformité de la signalisation horizontale d'après l'IISR partie 7 qui distingue aire péridodiques et aires permanentes",
+            "description": "Conformité de la signalisation horizontale d'après l'IISR partie 7 qui distingue aires péridodiques et aires permanentes",
             "type": "boolean",
             "example": "Oui",
             "trueValues": [

@@ -24,8 +24,8 @@ Spécification du fichier d'échange relatif aux aires de livraison
 | [ID](#identifiant-de-l'aire-de-livraison-utilisé-dans-des-bases-de-données-locales---propriété-id) | chaîne de caractères  | Oui |
 | [NOM](#nom-de-l'aire-de-livraison---propriété-nom) | chaîne de caractères  | Non |
 | [DATE_MAJ](#date-de-mise-à-jour---propriété-date_maj) | date et heure  | Non |
-| [LATITUDE](#latitude---propriété-latitude) | nombre réel  | Oui |
 | [LONGITUDE](#longitude---propriété-longitude) | nombre réel  | Oui |
+| [LATITUDE](#latitude---propriété-latitude) | nombre réel  | Oui |
 | [GEOM_WKT](#géométrie-au-format-wkt---propriété-geom_wkt) | chaîne de caractères  | Non |
 | [ADRESSE](#adresse-complète---propriété-adresse) | chaîne de caractères  | Non |
 | [CODE_POSTAL](#code-postal---propriété-code_postal) | chaîne de caractères  | Non |
@@ -91,19 +91,19 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Valeur optionnelle
 - Type : date et heure
 
-#### Latitude - Propriété `LATITUDE`
-
-> *Description : Coordonnee latitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))<br/>Ex : 45.769656*
-- Valeur obligatoire
-- Type : nombre réel
-- Valeur entre -90 et 90
-
 #### Longitude - Propriété `LONGITUDE`
 
-> *Description : Coordonnee longitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))<br/>Ex : 4.855184*
+> *Description : Coordonnée longitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))<br/>Ex : 4.855184*
 - Valeur obligatoire
 - Type : nombre réel
 - Valeur entre -180 et 180
+
+#### Latitude - Propriété `LATITUDE`
+
+> *Description : Coordonnée latitude associée à l'aire de livraison (système de projection WGS84 (EPSG:4326))<br/>Ex : 45.769656*
+- Valeur obligatoire
+- Type : nombre réel
+- Valeur entre -90 et 90
 
 #### Géométrie au format WKT - Propriété `GEOM_WKT`
 
@@ -190,7 +190,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 
 #### Conformité du marquage - Propriété `MARQUAGE_CONFORMITE`
 
-> *Description : Conformité de la signalisation horizontale d'après l'IISR partie 7 qui distingue aire péridodiques et aires permanentes<br/>Ex : Oui*
+> *Description : Conformité de la signalisation horizontale d'après l'IISR partie 7 qui distingue aires péridodiques et aires permanentes<br/>Ex : Oui*
 - Valeur optionnelle
 - Type : booléen
 
