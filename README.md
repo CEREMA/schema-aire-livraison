@@ -74,7 +74,7 @@ Ils sont dans le dossier `scripts`:
 
 - [01-Tester-Schema.bat (vérifier la conformité du schéma)](https://github.com/CEREMA/schema-aire-livraison/blob/main/scripts/01-Tester-Schema.bat)
 - [02-Creer-Documentation.bat (créer la documentation du schéma)](https://github.com/CEREMA/schema-aire-livraison/blob/main/scripts/02-Creer-Documentation.bat)
-- [03-Tester-Exemple.bat (tester la conformité du fichier exemple)](https://github.com/CEREMA/schema-aire-livraison/blob/main/scripts/03-Tester-Exemple.bat)
+- [03-Tester-Exemples.bat ([tester la conformité du fichier exemple)](https://github.com/CEREMA/schema-aire-livraison/blob/main/scripts/03-Tester-Exemple.bat](https://github.com/CEREMA/schema-aire-livraison/blob/v1.0.0/scripts/03-Tester-Exemples.bat))
 
 Ces scripts s'appuient sur la librairie [frictionless](https://framework.frictionlessdata.io/).
 
