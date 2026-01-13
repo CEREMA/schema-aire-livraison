@@ -13,8 +13,8 @@
     ],
     "countryCode": "FR",
     "homepage": "https://github.com/CEREMA/schema-aire-livraison",
-    "path": "https://github.com/CEREMA/schema-aire-livraison/raw/v0.2.0/schema.json",
-    "image": "xxx",
+    "path": "https://github.com/CEREMA/schema-aire-livraison/raw/v1.0.0/schema.json",
+    "image": "https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/refs/tags/v1.0.0/files/image.jpg",
     "licenses": [
         {
             "title": "Etalab Licence Ouverte 2.0",
@@ -26,7 +26,7 @@
         {
             "title": "Exemple valide pour le Grand Lyon",
             "name": "exemple-grand-lyon.csv",
-            "path": "xxx"
+            "path": "https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/refs/tags/v1.0.0/exemple-grand-lyon.csv"
         }
     ],
     "sources": [
@@ -37,12 +37,12 @@
         {
             "title": "Arrêté CA/MFV/2016/328 d'Antibes de 2016",
             "name": "arrete-CA/MFV/2016/328",
-            "path": "https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/v0.2.0/files/513_17_creation_emplacement_reserve_bd_wilson.pdf"
+            "path": "https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/v1.0.0/files/1095_16_regl_perm_emplact_livraison_bd_chancel-1.pdf"
         },
         {
             "title": "Arrêté CA/SM/2017/261 d'Antibes de 2017",
             "name": "arrete-CA/SM/2017/261",
-            "path": "https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/v0.2.0/files/513_17_creation_emplacement_reserve_bd_wilson.pdf"
+            "path": "https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/v1.0.0/files/513_17_creation_emplacement_reserve_bd_wilson.pdf"
         },
         {
             "title": "Aménager les aires de livraison",
@@ -63,6 +63,14 @@
         {
             "title": "Les initiatives du GART en faveur d’une logistique urbaine durable",
             "path": "https://www.gart.org/actualite/les-initiatives-du-gart-en-faveur-dune-logistique-urbaine-durable/"
+        },
+        {
+            "title": "Outils innovants InterLUD+",
+            "path": "https://www.interlud.green/projets-et-etudes-1/outils-innovants"
+        },
+        {
+            "title": "Les projets innovants du programme InTerLUD+ pour faciliter la logistique urbaine durable",
+            "path": "https://www.cerema.fr/fr/actualites/projets-innovants-du-programme-interlud-faciliter-logistique"
         }
     ],
     "created": "2024-01-04",

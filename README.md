@@ -23,11 +23,13 @@ Une mise à jour du schéma à été travaillée en 2025 dans le cadre du projet
 
 Certains champs du standard Curb Data Specification (https://github.com/openmobilityfoundation/curb-data-specification) ont été traduits et ajoutés au schéma. 
 
-Cette nouvelle version vise une caractérisation plus détaillée des aires de livraisons et une intégration dans les outils JOPTIMIZ (https://www.interlud.green/projets-et-etudes-1/outils-innovants).
+Cette nouvelle version (la v1.0.0) vise une caractérisation plus détaillée des aires de livraisons et une intégration dans les outils JOPTIMIZ (https://www.interlud.green/projets-et-etudes-1/outils-innovants).
 
-[Un fichier d'exemple (xxx)](https://github.com/CEREMA/schema-aire-livraison/blob/main/exemple_antibes.csv) est fourni pour la dernière version du schéma (voir plus), sur l'exemple du Grand Lyon.
+[Un fichier d'exemple sur le Grand Lyon](https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/refs/tags/v1.0.0/exemple-grand-lyon.csv) est fourni pour la dernière version du schéma.
 
-Les contributeurs de cette évolution sont Evan BOULOGNE et Philippe RAPIN (Urban Radar), Timothée FRITSCH HUMBLET (Cerema), Hélène DE SOLERE (Cerema).
+#### Contributeurs du schéma v1.0.0
+
+Les contributeurs de cette évolution sont Evan BOULOGNE et Philippe RAPIN (Urban Radar), Timothée FRITSCH HUMBLET (Cerema), Hélène DE SOLERE (Cerema) et Jean-Philippe Elie (Logistic Low Carbon).
 
 
 
