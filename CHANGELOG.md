@@ -1,6 +1,20 @@
 # 1.0 (refonte importance du schéma)
 
-## Lien du tableau de champs
+## Introduction
+
+Cette version  vise à :
+
+- Réduire le nombre de champs relatifs à la règlementation pour s'intéresser aux informations fonctionnelles
+- Ajouter plus de champs techniques relatifs aux aires de livraison
+- Faire le lien avec le standard [Curb Data Specification](https://github.com/openmobilityfoundation/curb-data-specification), par exemple sur le champ TEMPORALITE_ODS
+
+L'exemple porte sur le Grand Lyon et passe les tests.
+
+Le champ EQUIPEMENTS est un champ multiple dont le caractère multiple est géré par une expression régulière.
+
+## tableau de champs
+
+Le standard a été créé en prenant appui sur ce document Google Doscs :
 
 https://docs.google.com/spreadsheets/d/1hKA23tEkem2n8QiQwJQuWD1doH5zGnXALlUeKmyAVPQ/edit?gid=0#gid=0
 
@@ -11,7 +25,7 @@ https://docs.google.com/spreadsheets/d/1hKA23tEkem2n8QiQwJQuWD1doH5zGnXALlUeKmyA
 
 ## quelques modifications
 
-Validées par Hélène DE SOLERE et UrbanRadar
+Voici quelques modifications apportées au schéma, validées par Hélène DE SOLERE et UrbanRadar
 
 - **Suppression de champs** :
   - INTERV_REGIME : supprimé
@@ -33,8 +47,6 @@ Validées par Hélène DE SOLERE et UrbanRadar
   - PANNEAU_ETAT : à conserver dans la liste enum
   - PARITE_TROTTOIR : remplacé par "inconnu" dans la liste enum
   - DISPOSITION : supprimé de la liste enum
-
-J'ai mis les tableurs [exemple](https://docs.google.com/spreadsheets/d/1eQugpG3CE9LYPUUBsO_fQzrHAORn9VCWknzXMIQNONk/edit?gid=2029306892#gid=2029306892) et [champs](https://docs.google.com/spreadsheets/d/1hKA23tEkem2n8QiQwJQuWD1doH5zGnXALlUeKmyAVPQ/edit?gid=0#gid=0) à jour en conséquent.
 
 ## Clé primaire
 
