@@ -252,9 +252,9 @@
         {
             "name": "NOM",
             "title": "Nom de l'aire de livraison",
-            "description": "Nom lisible permettant d'identifier facilement l'aire de livraison. Constitué du nom de la collectivité associé à un numéro compris entre 1 et 9999 : 'nom_collectivité_#' (ex : cu_dunkerque_1)",
+            "description": "Nom lisible permettant d'identifier facilement l'aire de livraison. Constitué du code INSEE de la collectivité, suivi d'une suite de numéros (ex : code_insee_#)",
             "type": "string",
-            "example": "ca_annemasse_1",
+            "example": "200066793_1",
             "constraints": {
                 "required": false
             }
