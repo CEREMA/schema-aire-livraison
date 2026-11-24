@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Installation Python 3.7
-      uses: actions/setup-python@v1
+    - name: Installation Python
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.14.2'
+        python-version: '3.14'
     - name: Cache pip
       uses: actions/cache@v4
       with:
