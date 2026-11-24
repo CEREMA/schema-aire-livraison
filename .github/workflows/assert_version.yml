@@ -1,4 +1,4 @@
-name: Vérification de la cohérénce des versions dans tous les champs du schéma
+name: VÃ©rification de la cohÃ©rÃ©nce des versions dans tous les champs du schÃ©ma
 
 on:
   push:
@@ -9,12 +9,12 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
-        python-version: 3.8
+        python-version: '3.12'
 
     - uses: jannekem/run-python-script-action@v1
       id: script
